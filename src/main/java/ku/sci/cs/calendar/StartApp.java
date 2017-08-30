@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import views.MainView;
 
 /**
  * Hello world!
@@ -24,14 +25,23 @@ public class StartApp extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("/views/MainView.fxml"));
-
-		primaryStage.setTitle("Appointment");
-		primaryStage.setScene(new Scene(root));
-		primaryStage.show();
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/views/MainView.fxml"));
+		Parent root = loader.load();
 		
 		MainController controller = new MainController();
 		controller.startCalendarApp();
+		
+		System.out.println(loader.getController());
+		MainView mainView = loader.getController();
+		mainView.setController(controller);
+		
+		primaryStage.setTitle("Appointment");
+		primaryStage.setScene(new Scene(root));
+		primaryStage.setResizable(false);
+		primaryStage.show();
+		
+		
 		
 		
 	}

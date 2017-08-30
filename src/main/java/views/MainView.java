@@ -4,6 +4,7 @@ import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
@@ -57,14 +58,19 @@ public class MainView implements Initializable{
 	
 	
 	public MainView() {
-		this.controller = new MainController();
 		this.dateFormat = new SimpleDateFormat("dd/MM/yy");
 		this.timeFormat = new SimpleDateFormat("HH:mm");
 	}
 	
+	public void setController(MainController controller){
+		this.controller = controller;
+	}
+	
 	public void initialize(URL location, ResourceBundle resources) {
+		dateText.setValue(LocalDate.now());
 		initCol();
 	}
+	
 	public void saveAppointment(ActionEvent event) throws ParseException{
 		String date = dateText.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy"));
 		Event eventNow = new Event(dateFormat.parse(date), timeFormat.parse(timeText.getText()), topicText.getText(), detailText.getText());
