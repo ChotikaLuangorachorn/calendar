@@ -95,6 +95,10 @@ public class MainView implements Initializable{
 		detailCol.setCellValueFactory(new PropertyValueFactory<Event, String>("detail"));
 		
 	}
+	/**
+	 * set items of table
+	 * @param events
+	 */	
 	private void initData(ArrayList<Event> events){
 		data = FXCollections.observableList(events);
 		tableApp.setItems(data);
