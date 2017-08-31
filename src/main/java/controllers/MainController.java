@@ -13,20 +13,27 @@ public class MainController{
 	private Schedule schedule;
 	private Event eventOld;
 
-
-
 	public void startCalendarApp(){
 		this.view = new MainView();
 		this.schedule = new Schedule();
 
-
 	}
+	
+/**showScheedule or all events
+	It will called when click Save button*/
 	public ArrayList<Event> showSchedule(){
 		ArrayList<Event> events = schedule.getEvents();
 		return events;
 	}
+	
+/**add event to schedule in Schedule class
+	when click Save button*/
 	public void saveEvent(Event eventNow){
 		schedule.addEvent(eventNow);
 	}
+
+public Schedule getSchedule() {
+	return schedule;
+}
 
 }

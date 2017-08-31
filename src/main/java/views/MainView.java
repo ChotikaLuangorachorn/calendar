@@ -71,6 +71,8 @@ public class MainView implements Initializable{
 		initCol();
 	}
 	
+	/** action of Save Button
+	 * click for save event to Schedule */
 	public void saveAppointment(ActionEvent event) throws ParseException{
 		String date = dateText.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy"));
 		Event eventNow = new Event(dateFormat.parse(date), timeFormat.parse(timeText.getText()), topicText.getText(), detailText.getText());
@@ -80,6 +82,7 @@ public class MainView implements Initializable{
 		initData(events);
 	}
 	
+	/**set column of Schedule appointment that save all events*/
 	private void initCol(){
 		dateCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Event,String>, ObservableValue<String>>() {
 			public ObservableValue<String> call(CellDataFeatures<Event, String> param) {
