@@ -84,7 +84,7 @@ public class MainView implements Initializable{
 	
 	/**set column of Schedule appointment that save all events*/
 	private void initCol(){
-		dateCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Event,String>, ObservableValue<String>>() {
+		dateCol.setCellValueFactory(new Callback<CellDataFeatures<Event,String>, ObservableValue<String>>() {
 			public ObservableValue<String> call(CellDataFeatures<Event, String> param) {
 				SimpleStringProperty property = new SimpleStringProperty();
 				DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
@@ -92,7 +92,7 @@ public class MainView implements Initializable{
 				return property;
 			}
 		});
-		timeCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Event,String>, ObservableValue<String>>() {
+		timeCol.setCellValueFactory(new Callback<CellDataFeatures<Event,String>, ObservableValue<String>>() {
 			public ObservableValue<String> call(CellDataFeatures<Event, String> param) {
 				SimpleStringProperty property = new SimpleStringProperty();
 				DateFormat formatter = new SimpleDateFormat("HH:mm");

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0"
+	prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="views.MainView">
+	<children>
+		<Label layoutX="14.0" layoutY="14.0" prefHeight="27.0"
+			prefWidth="63.0" text="Topic:">
+			<font>
+				<Font size="18.0" />
+			</font>
+		</Label>
+		<Label layoutX="380.0" layoutY="14.0" prefHeight="27.0"
+			prefWidth="63.0" text="Date:">
+			<font>
+				<Font size="18.0" />
+			</font>
+		</Label>
+		<TextField fx:id="topicText" layoutX="77.0" layoutY="8.0"
+			prefHeight="39.0" prefWidth="285.0">
+			<font>
+				<Font size="16.0" />
+			</font>
+		</TextField>
+		<DatePicker fx:id="dateText" layoutX="443.0" layoutY="8.0"
+			prefHeight="39.0" prefWidth="119.0" />
+		<Label layoutX="14.0" layoutY="50.0" prefHeight="27.0"
+			prefWidth="63.0" text="Detail:">
+			<font>
+				<Font size="18.0" />
+			</font>
+		</Label>
+		<TextArea fx:id="detailText" layoutX="77.0" layoutY="48.0"
+			prefHeight="86.0" prefWidth="285.0">
+			<font>
+				<Font size="16.0" />
+			</font>
+		</TextArea>
+		<Button fx:id="saveBtn" layoutX="425.0" layoutY="107.0"
+			mnemonicParsing="false" onAction="#saveAppointment" prefHeight="27.0"
+			prefWidth="86.0" text="SAVE" />
+		<Label layoutX="380.0" layoutY="50.0" prefHeight="27.0"
+			prefWidth="63.0" text="Time:">
+			<font>
+				<Font size="18.0" />
+			</font>
+		</Label>
+		<TextField fx:id="timeText" layoutX="443.0" layoutY="50.0"
+			prefHeight="39.0" prefWidth="75.0" text="00:00">
+			<font>
+				<Font size="16.0" />
+			</font>
+		</TextField>
+		<Label layoutX="14.0" layoutY="134.0" prefHeight="27.0"
+			prefWidth="144.0" text="Appointment list:">
+			<font>
+				<Font size="18.0" />
+			</font>
+		</Label>
+		<TableView fx:id="tableApp" layoutX="14.0" layoutY="161.0"
+			prefHeight="214.0" prefWidth="571.0">
+			<columns>
+				<TableColumn fx:id="dateCol" prefWidth="75.0" text="Date" />
+				<TableColumn fx:id="timeCol" prefWidth="75.0" text="Time" />
+				<TableColumn fx:id="topicCol" prefWidth="125.0" text="Topic" />
+				<TableColumn fx:id="detailCol" prefWidth="295.0" text="Detail" />
+			</columns>
+		</TableView>
+	</children>
+</AnchorPane>
