@@ -2,24 +2,21 @@ package controllers;
 
 
 import java.util.ArrayList;
-
 import models.Event;
 import models.Schedule;
 import views.MainView;
 
 public class MainController{
 	private MainView view;
-	private Event event;
 	private Schedule schedule;
-	private Event eventOld;
 
-	public void startCalendarApp(){
+	public void startCalendarApp()  {
 		this.view = new MainView();
 		this.schedule = new Schedule();
-
+		this.schedule.selectToDB();
 	}
 	
-/**showScheedule or all events
+/**show Schedule or all events
 	It will called when click Save button*/
 	public ArrayList<Event> showSchedule(){
 		ArrayList<Event> events = schedule.getEvents();
@@ -31,9 +28,10 @@ public class MainController{
 	public void saveEvent(Event eventNow){
 		schedule.addEvent(eventNow);
 	}
+	public void removeEvent(Event event){
+		schedule.deleteEvent(event);
+	}
+	public void editEvent(Event event){ schedule.updateToDB(event);}
 
-public Schedule getSchedule() {
-	return schedule;
 }
 
-}

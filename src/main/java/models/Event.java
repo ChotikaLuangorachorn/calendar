@@ -1,18 +1,26 @@
 package models;
 
-import java.util.Date;
-
 public class Event {
 	private String topic;
-	private Date date;
-	private Date time;
+	private String date;
+	private String time;
 	private String detail;
-	public Event(Date date,Date time,String topic, String detail) {
+	private String topicOld;
+	private String dateOld;
 
+
+
+	private String timeOld;
+	private String detailOld;
+	public Event(String date,String time,String topic, String detail) {
 		this.date =  date;
 		this.time = time;
 		this.topic = topic;
 		this.detail = detail;
+		this.dateOld =  date;
+		this.timeOld = time;
+		this.topicOld = topic;
+		this.detailOld = detail;
 	}
 	public String getTopic() {
 		return topic;
@@ -20,16 +28,16 @@ public class Event {
 	public void setTopic(String topic) {
 		this.topic = topic;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
-	public Date getTime() {
+	public String getTime() {
 		return time;
 	}
-	public void setTime(Date time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 	public String getDetail() {
@@ -38,6 +46,36 @@ public class Event {
 	public void setDetail(String detail) {
 		this.detail = detail;
 	}
-	
-	
+
+	public String getTopicOld() {
+		return topicOld;
+	}
+
+	public void setTopicOld(String topicOld) {
+		this.topicOld = topicOld;
+	}
+
+	public String getDateOld() {
+		return dateOld;
+	}
+
+	public void setDateOld(String dateOld) {
+		this.dateOld = dateOld;
+	}
+
+	public String getTimeOld() {
+		return timeOld;
+	}
+
+	public void setTimeOld(String timeOld) {
+		this.timeOld = timeOld;
+	}
+
+	public String getDetailOld() {
+		return detailOld;
+	}
+
+	public void setDetailOld(String detailOld) {
+		this.detailOld = detailOld;
+	}
 }
