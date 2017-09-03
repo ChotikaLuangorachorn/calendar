@@ -109,7 +109,9 @@ public class MainView implements Initializable {
 		eventSelect.setTime(timeText.getText());
 		eventSelect.setTopic(topicText.getText());
 		eventSelect.setDetail(detailText.getText());
+
 		controller.editEvent(eventSelect);
+
 		datePicker.setValue(LocalDate.now());
 		timeText.setText("00:00");
 		topicText.setText("");

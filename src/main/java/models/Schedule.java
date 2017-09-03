@@ -14,16 +14,13 @@ public class Schedule {
 	/** add each event to Schedule list
 	 * or Array List:events*/
 	public void addEvent(Event event) {
-		this.insertToDB(event);
+		this.events.add(event);
 	}
 	public void deleteEvent(Event event) {
 		this.deleteToDB(event);
 	}
 	public ArrayList<Event> getEvents() {
 		return events;
-	}
-	public Event getEvent() {
-		return event;
 	}
 
 	/**add event to Database*/
@@ -39,7 +36,7 @@ public class Schedule {
 				String queryInsert = "insert into events "+"values('" + event.getDate()+"','"+event.getTime()+"','"+event.getTopic()+"','"+event.getDetail()+"')";
 				statement.executeUpdate(queryInsert);
 				System.out.println("up-------");
-				this.events.add(event);
+				this.addEvent(event);
 				}catch (SQLException ex){
 					System.out.println("duplicate data");}
 				conn.close();
@@ -96,6 +93,7 @@ public class Schedule {
 					String queryInsert = "delete from events "+"where(date='" + event.getDate()+"' and time='"+event.getTime()+"' and topic='"+event.getTopic()+"' and detail='"+event.getDetail()+"')";
 					statement.executeUpdate(queryInsert);
 					System.out.println("delete-------");
+
 				}catch (SQLException ex){
 					System.out.println("error of delete");}
 				conn.close();

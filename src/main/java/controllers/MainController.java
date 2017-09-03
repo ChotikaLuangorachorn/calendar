@@ -26,7 +26,7 @@ public class MainController{
 	/**add event to schedule in Schedule class
 	when click Save button*/
 	public void saveEvent(Event eventNow){
-		schedule.addEvent(eventNow);
+		schedule.insertToDB(eventNow);
 	}
 	/**remove event from schedule in Schedule class
 	 when click Delete button*/
@@ -36,6 +36,14 @@ public class MainController{
 	/**edit event in schedule
 	 when click Edit button*/
 	public void editEvent(Event event){ schedule.updateToDB(event);}
+
+	public Schedule getSchedule() {
+		return schedule;
+	}
+
+	public void setSchedule(Schedule schedule) {
+		this.schedule = schedule;
+	}
 
 }
 

@@ -1,3 +1,5 @@
+/**  5810404928 Chotika Luangorachorn  */
+
 import controllers.MainController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -11,10 +13,7 @@ import views.MainView;
 
 import java.io.IOException;
 
-/**
- * Hello world!
- *
- */
+
 public class StartApp extends Application {
 
     public static void main( String[] args ) {
