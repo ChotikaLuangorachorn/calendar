@@ -23,14 +23,18 @@ public class MainController{
 		return events;
 	}
 	
-/**add event to schedule in Schedule class
+	/**add event to schedule in Schedule class
 	when click Save button*/
 	public void saveEvent(Event eventNow){
 		schedule.addEvent(eventNow);
 	}
+	/**remove event from schedule in Schedule class
+	 when click Delete button*/
 	public void removeEvent(Event event){
 		schedule.deleteEvent(event);
 	}
+	/**edit event in schedule
+	 when click Edit button*/
 	public void editEvent(Event event){ schedule.updateToDB(event);}
 
 }

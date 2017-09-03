@@ -74,6 +74,9 @@ public class MainView implements Initializable {
 		ArrayList<Event> events = controller.showSchedule();
 		initData(events);
 	}
+
+	/** action of Delete Button
+	 * click for remove event */
 	public void deleteAppointment(ActionEvent event){
 		Event eventSelect = tableApp.getSelectionModel().getSelectedItem();
 		if (eventSelect != null) {
@@ -81,6 +84,9 @@ public class MainView implements Initializable {
 			controller.removeEvent(eventSelect);
 		}
 	}
+
+	/** action of Edit Button
+	 * click for edit event */
 	public void editAppointment(ActionEvent event){
 		Event eventSelect = tableApp.getSelectionModel().getSelectedItem();
 		if (eventSelect != null) {
@@ -93,6 +99,9 @@ public class MainView implements Initializable {
 			confirmBtn.setDisable(false);
 		}
 	}
+
+	/** action of Confirm Button
+	 * click for confirm editing event */
 	public  void confirmEdit(ActionEvent event){
 		Event eventSelect = tableApp.getSelectionModel().getSelectedItem();
 		String date = datePicker.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy"));

@@ -11,7 +11,7 @@ public class Schedule {
 		this.events = new ArrayList<Event>();
 	}
 	
-	/** add each even to Schedule list 
+	/** add each event to Schedule list
 	 * or Array List:events*/
 	public void addEvent(Event event) {
 		this.insertToDB(event);
@@ -26,6 +26,7 @@ public class Schedule {
 		return event;
 	}
 
+	/**add event to Database*/
 	public void insertToDB(Event event) {
 		try{
 			Class.forName("org.sqlite.JDBC");
@@ -49,6 +50,8 @@ public class Schedule {
 			ex.printStackTrace();
 		}
 	}
+
+	/**show event in Database*/
 	public void selectToDB() {
 		try{
 			Class.forName("org.sqlite.JDBC");
@@ -78,6 +81,8 @@ public class Schedule {
 			ex.printStackTrace();
 		}
 	}
+
+	/**remove event in Database*/
 	public void deleteToDB(Event event){
 		try{
 			Class.forName("org.sqlite.JDBC");
@@ -101,6 +106,8 @@ public class Schedule {
 			ex.printStackTrace();
 		}
 	}
+
+	/**edit event in Database*/
 	public void updateToDB(Event event) {
 		try{
 			Class.forName("org.sqlite.JDBC");
