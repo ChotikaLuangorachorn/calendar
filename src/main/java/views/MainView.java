@@ -71,6 +71,12 @@ public class MainView implements Initializable {
 		String date = datePicker.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy"));
 		Event eventNow = new Event(date,timeText.getText(), topicText.getText(), detailText.getText());
 		controller.saveEvent(eventNow);
+
+		datePicker.setValue(LocalDate.now());
+		timeText.setText("00:00");
+		topicText.setText("");
+		detailText.setText("");
+
 		ArrayList<Event> events = controller.showSchedule();
 		initData(events);
 	}

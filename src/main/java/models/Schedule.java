@@ -33,10 +33,12 @@ public class Schedule {
 				System.out.println("Connected to the database...");
 				Statement statement = conn.createStatement();
 				try{
-				String queryInsert = "insert into events "+"values('" + event.getDate()+"','"+event.getTime()+"','"+event.getTopic()+"','"+event.getDetail()+"')";
-				statement.executeUpdate(queryInsert);
-				System.out.println("up-------");
-				this.addEvent(event);
+					String topic = (event.getTopic()).replace("'","\''");
+					String detail = (event.getDetail()).replace("'","\''");
+					String queryInsert = "insert into events "+"values('" + event.getDate()+"','"+event.getTime()+"','"+topic+"','"+detail+"')";
+					statement.executeUpdate(queryInsert);
+					System.out.println("up-------");
+					this.addEvent(event);
 				}catch (SQLException ex){
 					System.out.println("duplicate data");}
 				conn.close();
@@ -90,8 +92,10 @@ public class Schedule {
 				DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
 				Statement statement = conn.createStatement();
 				try{
-					String queryInsert = "delete from events "+"where(date='" + event.getDate()+"' and time='"+event.getTime()+"' and topic='"+event.getTopic()+"' and detail='"+event.getDetail()+"')";
-					statement.executeUpdate(queryInsert);
+					String topic = (event.getTopic()).replace("'","\''");
+					String detail = (event.getDetail()).replace("'","\''");
+					String queryDelete = "delete from events "+"where(date='" + event.getDate()+"' and time='"+event.getTime()+"' and topic='"+ topic +"' and detail='"+ detail +"')";
+					statement.executeUpdate(queryDelete);
 					System.out.println("delete-------");
 
 				}catch (SQLException ex){
@@ -115,11 +119,16 @@ public class Schedule {
 				System.out.println("Connected to the database...");
 				Statement statement = conn.createStatement();
 				try{
-					String queryInsert = String.format("update events "+"set date='%s', time='%s', topic='%s', detail='%s' "
+					String topic = (event.getTopic()).replace("'","\''");
+					String detail = (event.getDetail()).replace("'","\''");
+
+					String topicOld = (event.getTopicOld()).replace("'","\''");
+					String detailOld = (event.getDetailOld()).replace("'","\''");
+					String queryUpdate = String.format("update events "+"set date='%s', time='%s', topic='%s', detail='%s' "
 							+"where date='%s' and time='%s' and topic='%s' and detail='%s'",
-							event.getDate(),event.getTime(),event.getTopic(),event.getDetail(),
-							event.getDateOld(),event.getTimeOld(),event.getTopicOld(),event.getDetailOld());
-					statement.executeUpdate(queryInsert);
+							event.getDate(),event.getTime(),topic,detail,
+							event.getDateOld(),event.getTimeOld(),topicOld,detailOld);
+					statement.executeUpdate(queryUpdate);
 					System.out.println("edit-------");
 					event.setDateOld(event.getDate());
 					event.setTimeOld(event.getTime());
