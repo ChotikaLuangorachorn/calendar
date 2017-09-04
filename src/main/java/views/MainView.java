@@ -88,6 +88,7 @@ public class MainView implements Initializable {
 		if (eventSelect != null) {
 			tableApp.getItems().remove(eventSelect);
 			controller.removeEvent(eventSelect);
+			tableApp.getSelectionModel().clearSelection();
 		}
 	}
 
@@ -104,6 +105,7 @@ public class MainView implements Initializable {
 
 			confirmBtn.setDisable(false);
 		}
+
 	}
 
 	/** action of Confirm Button
@@ -125,6 +127,7 @@ public class MainView implements Initializable {
 
 		confirmBtn.setDisable(true);
 		saveBtn.setDisable(false);
+		tableApp.getSelectionModel().clearSelection();
 		tableApp.refresh();
 	}
 

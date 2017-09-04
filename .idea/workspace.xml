@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d1c04bb-66ce-4519-9c83-1951f273cb38" name="Default" comment="add documentation comment &amp; create jar file">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/calendar/schedule.db" afterPath="$PROJECT_DIR$/out/artifacts/calendar/schedule.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule.db" afterPath="$PROJECT_DIR$/schedule.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/Schedule.java" afterPath="$PROJECT_DIR$/src/main/java/models/Schedule.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/views/MainView.java" afterPath="$PROJECT_DIR$/src/main/java/views/MainView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -72,11 +70,11 @@
       <file leaf-file-name="MainView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="62" column="21" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+            <state relative-caret-position="102">
+              <caret line="117" column="16" lean-forward="false" selection-start-line="117" selection-start-column="16" selection-end-line="117" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3671#3776#0" expanded="false" />
+                <element signature="e#3771#3876#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -719,7 +717,7 @@
           <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3671#3776#0" expanded="false" />
+            <element signature="e#3771#3876#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -827,7 +825,7 @@
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3671#3776#0" expanded="false" />
+            <element signature="e#3771#3876#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -917,7 +915,7 @@
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3671#3776#0" expanded="false" />
+            <element signature="e#3771#3876#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1032,7 +1030,7 @@
           <caret line="62" column="47" lean-forward="false" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3671#3776#0" expanded="false" />
+            <element signature="e#3771#3876#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1232,11 +1230,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="62" column="21" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+        <state relative-caret-position="102">
+          <caret line="117" column="16" lean-forward="false" selection-start-line="117" selection-start-column="16" selection-end-line="117" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3671#3776#0" expanded="false" />
+            <element signature="e#3771#3876#0" expanded="false" />
           </folding>
         </state>
       </provider>
