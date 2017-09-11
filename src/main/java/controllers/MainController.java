@@ -9,11 +9,13 @@ import views.MainView;
 public class MainController{
 	private MainView view;
 	private Schedule schedule;
+	private DBController db;
 
 	public void startCalendarApp()  {
 		this.view = new MainView();
 		this.schedule = new Schedule();
-		this.schedule.selectToDB();
+		this.db = new DBController(schedule);
+		this.db.selectToDB();
 	}
 	
 /**show Schedule or all events
@@ -26,16 +28,16 @@ public class MainController{
 	/**add event to schedule in Schedule class
 	when click Save button*/
 	public void saveEvent(Event eventNow){
-		schedule.insertToDB(eventNow);
+		db.insertToDB(eventNow);
 	}
 	/**remove event from schedule in Schedule class
 	 when click Delete button*/
 	public void removeEvent(Event event){
-		schedule.deleteEvent(event);
+		db.deleteToDB(event);
 	}
 	/**edit event in schedule
 	 when click Edit button*/
-	public void editEvent(Event event){ schedule.updateToDB(event);}
+	public void editEvent(Event event){ db.updateToDB(event);}
 
 	public Schedule getSchedule() {
 		return schedule;
