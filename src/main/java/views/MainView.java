@@ -32,25 +32,22 @@ public class MainView implements Initializable {
 	@FXML
 	private TableView<Event> tableApp;
 	@FXML
-	private TableColumn<Event, String> dateCol;
-	@FXML
-	private TableColumn<Event, String> timeCol;
-	@FXML
-	private TableColumn<Event, String> topicCol;
-	@FXML
-	private TableColumn<Event, String> detailCol;
+	private TableColumn<Event, String> dateCol, timeCol, typeCol, topicCol, detailCol;
 	@FXML
 	private DatePicker datePicker;
 	@FXML
-	private TextField timeText;
-	@FXML
-	private TextField topicText;
+	private TextField timeText, topicText;
 	@FXML
 	private TextArea detailText;
 	@FXML
 	private Button confirmBtn;
 	@FXML
 	private Button saveBtn;
+	@FXML
+	private RadioButton dailyBtn, weeklyBtn, monthlyBtn, yearlyBtn;
+	@FXML
+	private ToggleGroup typeGroup;
+
 	
 	private ObservableList<Event> data;
 	private MainController controller;
@@ -61,6 +58,7 @@ public class MainView implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+
 		datePicker.setValue(LocalDate.now());
 		initCol();
 	}
@@ -69,13 +67,25 @@ public class MainView implements Initializable {
 	 * click for save event to Schedule */
 	public void saveAppointment(ActionEvent event){
 		String date = datePicker.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy"));
-		Event eventNow = new Event(date,timeText.getText(), topicText.getText(), detailText.getText());
+		String day = datePicker.getValue().getDayOfWeek().toString();
+		System.out.println(day);
+		String type = "0000";
+		if (dailyBtn.isSelected()){
+			type = dailyBtn.getText();}
+		else if (weeklyBtn.isSelected()){
+			type = weeklyBtn.getText();}
+		else if (monthlyBtn.isSelected()){
+			type = monthlyBtn.getText();}
+		else if (yearlyBtn.isSelected()){
+			type = yearlyBtn.getText();}
+		Event eventNow = new Event(day +" "+date,timeText.getText(), type, topicText.getText(), detailText.getText());
 		controller.saveEvent(eventNow);
 
 		datePicker.setValue(LocalDate.now());
 		timeText.setText("00:00");
 		topicText.setText("");
 		detailText.setText("");
+		dailyBtn.setSelected(true);
 
 		ArrayList<Event> events = controller.showSchedule();
 		initData(events);
@@ -102,6 +112,19 @@ public class MainView implements Initializable {
 			detailText.setText(eventSelect.getDetail());
 			timeText.setText(eventSelect.getTime());
 			datePicker.getEditor().setText(eventSelect.getDate());
+			String type = eventSelect.getType();
+			dailyBtn.setSelected(false);
+			weeklyBtn.setSelected(false);
+			monthlyBtn.setSelected(false);
+			yearlyBtn.setSelected(false);
+			if (type.equals(dailyBtn.getText())){
+				dailyBtn.setSelected(true);}
+			else if (type.equals(weeklyBtn.getText())){
+				weeklyBtn.setSelected(true);}
+			else if (type.equals(monthlyBtn.getText())){
+				monthlyBtn.setSelected(true);}
+			else if (type.equals(yearlyBtn.getText())){
+				yearlyBtn.setSelected(true);}
 
 			confirmBtn.setDisable(false);
 		}
@@ -117,6 +140,14 @@ public class MainView implements Initializable {
 		eventSelect.setTime(timeText.getText());
 		eventSelect.setTopic(topicText.getText());
 		eventSelect.setDetail(detailText.getText());
+		if (dailyBtn.isSelected()){
+			eventSelect.setType(dailyBtn.getText());}
+		else if (weeklyBtn.isSelected()){
+			eventSelect.setType(weeklyBtn.getText());}
+		else if (monthlyBtn.isSelected()){
+			eventSelect.setType(monthlyBtn.getText());}
+		else if (yearlyBtn.isSelected()){
+			eventSelect.setType(yearlyBtn.getText());}
 
 		controller.editEvent(eventSelect);
 
@@ -124,6 +155,7 @@ public class MainView implements Initializable {
 		timeText.setText("00:00");
 		topicText.setText("");
 		detailText.setText("");
+		dailyBtn.setSelected(true);
 
 		confirmBtn.setDisable(true);
 		saveBtn.setDisable(false);
@@ -151,6 +183,7 @@ public class MainView implements Initializable {
 //		});
 		dateCol.setCellValueFactory(new PropertyValueFactory<Event, String>("date"));
 		timeCol.setCellValueFactory(new PropertyValueFactory<Event,String>("time"));
+		typeCol.setCellValueFactory(new PropertyValueFactory<Event, String>("type"));
 		topicCol.setCellValueFactory(new PropertyValueFactory<Event, String>("topic"));
 		detailCol.setCellValueFactory(new PropertyValueFactory<Event, String>("detail"));
 	}
