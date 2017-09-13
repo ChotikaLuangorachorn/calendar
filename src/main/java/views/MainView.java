@@ -22,10 +22,10 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ValueRange;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.TimeZone;
 
 public class MainView implements Initializable {
 	
@@ -36,7 +36,7 @@ public class MainView implements Initializable {
 	@FXML
 	private DatePicker datePicker;
 	@FXML
-	private TextField timeText, topicText;
+	private TextField topicText;
 	@FXML
 	private TextArea detailText;
 	@FXML
@@ -44,11 +44,10 @@ public class MainView implements Initializable {
 	@FXML
 	private Button saveBtn;
 	@FXML
-	private RadioButton dailyBtn, weeklyBtn, monthlyBtn, yearlyBtn;
-	@FXML
-	private ToggleGroup typeGroup;
-
-	
+	private ComboBox typeBox, hourBox, minBox;
+	private ObservableList<String> repeatTypeList = FXCollections.observableArrayList("Never","Daily", "Weekly", "Monthly");
+	private ObservableList<String> hrList = FXCollections.observableArrayList();
+	private ObservableList<String> minList = FXCollections.observableArrayList();
 	private ObservableList<Event> data;
 	private MainController controller;
 
@@ -58,8 +57,30 @@ public class MainView implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
 		datePicker.setValue(LocalDate.now());
+		typeBox.setValue("Never");
+		typeBox.setItems(repeatTypeList);
+
+		String hrs = "";
+		for (int i=0; i<24;i++){
+			hrs = i +"";
+			if (hrs.length()<2){
+				hrs = "0" + hrs;
+			}
+			hrList.add(hrs);
+		}
+		hourBox.setItems(hrList);
+
+		String mins = "";
+		for (int i=0; i<60;i++){
+			mins = i +"";
+			if (mins.length()<2){
+				mins = "0" + mins;
+			}
+			minList.add(mins);
+		}
+		minBox.setItems(minList);
+
 		initCol();
 	}
 
@@ -69,23 +90,18 @@ public class MainView implements Initializable {
 		String date = datePicker.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy"));
 		String day = datePicker.getValue().getDayOfWeek().toString();
 		System.out.println(day);
-		String type = "0000";
-		if (dailyBtn.isSelected()){
-			type = dailyBtn.getText();}
-		else if (weeklyBtn.isSelected()){
-			type = weeklyBtn.getText();}
-		else if (monthlyBtn.isSelected()){
-			type = monthlyBtn.getText();}
-		else if (yearlyBtn.isSelected()){
-			type = yearlyBtn.getText();}
-		Event eventNow = new Event(day +" "+date,timeText.getText(), type, topicText.getText(), detailText.getText());
+		String type = typeBox.getValue().toString();
+		String timeText = hourBox.getValue()+":"+ minBox.getValue();
+		Event eventNow = new Event(date,timeText, type, topicText.getText(), detailText.getText());
 		controller.saveEvent(eventNow);
 
 		datePicker.setValue(LocalDate.now());
-		timeText.setText("00:00");
+
 		topicText.setText("");
 		detailText.setText("");
-		dailyBtn.setSelected(true);
+		typeBox.setValue("Never");
+		hourBox.setValue("hr");
+		minBox.setValue("min");
 
 		ArrayList<Event> events = controller.showSchedule();
 		initData(events);
@@ -110,22 +126,11 @@ public class MainView implements Initializable {
 			saveBtn.setDisable(true);
 			topicText.setText(eventSelect.getTopic());
 			detailText.setText(eventSelect.getDetail());
-			timeText.setText(eventSelect.getTime());
+			hourBox.setValue((eventSelect.getTime().split(":"))[0]);
+			minBox.setValue((eventSelect.getTime().split(":"))[1]);
 			datePicker.getEditor().setText(eventSelect.getDate());
 			String type = eventSelect.getType();
-			dailyBtn.setSelected(false);
-			weeklyBtn.setSelected(false);
-			monthlyBtn.setSelected(false);
-			yearlyBtn.setSelected(false);
-			if (type.equals(dailyBtn.getText())){
-				dailyBtn.setSelected(true);}
-			else if (type.equals(weeklyBtn.getText())){
-				weeklyBtn.setSelected(true);}
-			else if (type.equals(monthlyBtn.getText())){
-				monthlyBtn.setSelected(true);}
-			else if (type.equals(yearlyBtn.getText())){
-				yearlyBtn.setSelected(true);}
-
+			typeBox.setValue(type);
 			confirmBtn.setDisable(false);
 		}
 
@@ -137,26 +142,18 @@ public class MainView implements Initializable {
 		Event eventSelect = tableApp.getSelectionModel().getSelectedItem();
 		String date = datePicker.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy"));
 		eventSelect.setDate(date);
-		eventSelect.setTime(timeText.getText());
+		eventSelect.setTime(hourBox.getValue() + ":" + minBox.getValue());
 		eventSelect.setTopic(topicText.getText());
 		eventSelect.setDetail(detailText.getText());
-		if (dailyBtn.isSelected()){
-			eventSelect.setType(dailyBtn.getText());}
-		else if (weeklyBtn.isSelected()){
-			eventSelect.setType(weeklyBtn.getText());}
-		else if (monthlyBtn.isSelected()){
-			eventSelect.setType(monthlyBtn.getText());}
-		else if (yearlyBtn.isSelected()){
-			eventSelect.setType(yearlyBtn.getText());}
+		eventSelect.setType(typeBox.getValue().toString());
 
 		controller.editEvent(eventSelect);
-
 		datePicker.setValue(LocalDate.now());
-		timeText.setText("00:00");
+		hourBox.setValue("hr");
+		minBox.setValue("min");
 		topicText.setText("");
 		detailText.setText("");
-		dailyBtn.setSelected(true);
-
+		typeBox.setValue("Never");
 		confirmBtn.setDisable(true);
 		saveBtn.setDisable(false);
 		tableApp.getSelectionModel().clearSelection();

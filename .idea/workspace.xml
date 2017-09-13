@@ -7,15 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d1c04bb-66ce-4519-9c83-1951f273cb38" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/models/Event.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/models/Schedule.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/MyAppTest.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule.db" afterPath="$PROJECT_DIR$/schedule.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controllers/MainController.class" afterPath="$PROJECT_DIR$/target/classes/controllers/MainController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/views/MainView.class" afterPath="$PROJECT_DIR$/target/classes/views/MainView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/Event.java" afterPath="$PROJECT_DIR$/src/main/java/models/Event.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/views/MainView.java" afterPath="$PROJECT_DIR$/src/main/java/views/MainView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/MainView.fxml" afterPath="$PROJECT_DIR$/src/main/resources/MainView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/MyAppTest.java" afterPath="$PROJECT_DIR$/src/test/java/MyAppTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MainView.fxml" afterPath="$PROJECT_DIR$/target/classes/MainView.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,8 +29,8 @@
       <file leaf-file-name="StartApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/StartApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="34" column="45" lean-forward="true" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+            <state relative-caret-position="220">
+              <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,22 +40,22 @@
       </file>
       <file leaf-file-name="MainView.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="78" column="27" lean-forward="false" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+            <state relative-caret-position="476">
+              <caret line="33" column="31" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#689#690#0" expanded="true" />
@@ -69,32 +67,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-544">
-              <caret line="76" column="42" lean-forward="true" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+            <state relative-caret-position="144">
+              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#deleteAppointment#0;class#MainView#0" expanded="false" />
-                <element signature="method#editAppointment#0;class#MainView#0" expanded="false" />
-                <element signature="e#5009#5114#0" expanded="false" />
+                <element signature="e#4878#4983#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DBController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/DBController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#189#190#0" expanded="true" />
-                <element signature="e#229#230#0" expanded="true" />
-                <element signature="method#insertToDB#0;class#DBController#0" expanded="false" />
-                <element signature="method#selectToDB#0;class#DBController#0" expanded="false" />
                 <element signature="method#deleteToDB#0;class#DBController#0" expanded="false" />
               </folding>
             </state>
@@ -104,8 +96,8 @@
       <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/models/Event.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+            <state relative-caret-position="255">
+              <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
               <folding>
                 <element signature="e#623#624#0" expanded="true" />
                 <element signature="e#642#643#0" expanded="true" />
@@ -155,8 +147,8 @@
       <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/models/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            <state relative-caret-position="238">
+              <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
                 <element signature="e#290#291#0" expanded="true" />
                 <element signature="e#319#320#0" expanded="true" />
@@ -168,8 +160,8 @@
       <file leaf-file-name="MyAppTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/MyAppTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+            <state relative-caret-position="459">
+              <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
               <folding>
                 <marker date="1505150576818" expanded="false" signature="829:836" ph="&lt;~&gt;" />
               </folding>
@@ -229,7 +221,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-4" />
     <option name="y" value="156" />
     <option name="width" value="1346" />
@@ -251,9 +243,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -332,7 +325,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -617,7 +609,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505146003692</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add daily, weekly, ...">
+      <created>1505156175909</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1505156175909</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -653,7 +652,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -669,7 +668,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2526475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25642964" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -730,7 +729,8 @@
     <MESSAGE value="Calendar add EDIT and DELETE" />
     <MESSAGE value="add documentation comment &amp; create jar file" />
     <MESSAGE value="move sqlDB from model to controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="move sqlDB from model to controller" />
+    <MESSAGE value="add daily, weekly, ..." />
+    <option name="LAST_COMMIT_MESSAGE" value="add daily, weekly, ..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -750,14 +750,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
@@ -779,10 +779,8 @@
         <state relative-caret-position="1479">
           <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#deleteAppointment#0;class#MainView#0" expanded="false" />
-            <element signature="method#editAppointment#0;class#MainView#0" expanded="false" />
-            <element signature="e#5009#5114#0" expanded="false" />
+            <element signature="e#4878#4983#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -877,14 +875,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/out/artifacts/calendar3/calendar3.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
@@ -906,10 +904,8 @@
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#deleteAppointment#0;class#MainView#0" expanded="false" />
-            <element signature="method#editAppointment#0;class#MainView#0" expanded="false" />
-            <element signature="e#5009#5114#0" expanded="false" />
+            <element signature="e#4878#4983#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1004,14 +1000,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
@@ -1019,10 +1015,8 @@
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#deleteAppointment#0;class#MainView#0" expanded="false" />
-            <element signature="method#editAppointment#0;class#MainView#0" expanded="false" />
-            <element signature="e#5009#5114#0" expanded="false" />
+            <element signature="e#4878#4983#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1138,14 +1132,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1037">
           <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
@@ -1153,10 +1147,8 @@
         <state relative-caret-position="799">
           <caret line="62" column="47" lean-forward="false" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#deleteAppointment#0;class#MainView#0" expanded="false" />
-            <element signature="method#editAppointment#0;class#MainView#0" expanded="false" />
-            <element signature="e#5009#5114#0" expanded="false" />
+            <element signature="e#4878#4983#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1286,8 +1278,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/models/Schedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state relative-caret-position="238">
+          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding>
             <element signature="e#290#291#0" expanded="true" />
             <element signature="e#319#320#0" expanded="true" />
@@ -1297,43 +1289,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/MyAppTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+        <state relative-caret-position="459">
+          <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
           <folding>
             <marker date="1505150576818" expanded="false" signature="829:836" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/StartApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="34" column="45" lean-forward="true" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/DBController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="method#insertToDB#0;class#DBController#0" expanded="false" />
-            <element signature="method#selectToDB#0;class#DBController#0" expanded="false" />
-            <element signature="method#deleteToDB#0;class#DBController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+        <state relative-caret-position="476">
+          <caret line="33" column="31" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#689#690#0" expanded="true" />
@@ -1346,8 +1313,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/models/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        <state relative-caret-position="255">
+          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
           <folding>
             <element signature="e#623#624#0" expanded="true" />
             <element signature="e#642#643#0" expanded="true" />
@@ -1393,26 +1360,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/StartApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="220">
+          <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="78" column="27" lean-forward="false" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
-          <caret line="76" column="42" lean-forward="true" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+        <state relative-caret-position="144">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="method#deleteAppointment#0;class#MainView#0" expanded="false" />
+            <element signature="e#4878#4983#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/DBController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#deleteAppointment#0;class#MainView#0" expanded="false" />
-            <element signature="method#editAppointment#0;class#MainView#0" expanded="false" />
-            <element signature="e#5009#5114#0" expanded="false" />
+            <element signature="method#deleteToDB#0;class#DBController#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -9,7 +9,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.MainView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="589.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.MainView">
 	<children>
 		<Label layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="63.0" text="Topic:">
 			<font>
@@ -26,34 +26,29 @@
 				<Font size="16.0" />
 			</font>
 		</TextField>
-		<DatePicker fx:id="datePicker" layoutX="339.0" layoutY="7.0" prefHeight="39.0" prefWidth="102.0" />
-		<Label layoutX="14.0" layoutY="50.0" prefHeight="27.0" prefWidth="63.0" text="Detail:">
+		<DatePicker fx:id="datePicker" layoutX="335.0" layoutY="8.0" prefHeight="39.0" prefWidth="151.0" />
+		<Label layoutX="14.0" layoutY="51.0" prefHeight="27.0" prefWidth="63.0" text="Detail:">
 			<font>
 				<Font size="18.0" />
 			</font>
 		</Label>
-		<TextArea fx:id="detailText" layoutX="77.0" layoutY="48.0" prefHeight="86.0" prefWidth="189.0">
+		<TextArea fx:id="detailText" layoutX="77.0" layoutY="48.0" prefHeight="101.0" prefWidth="189.0">
 			<font>
 				<Font size="16.0" />
 			</font>
 		</TextArea>
-		<Button fx:id="saveBtn" layoutX="289.0" layoutY="107.0" mnemonicParsing="false" onAction="#saveAppointment" prefHeight="27.0" prefWidth="86.0" text="SAVE" />
-		<Label layoutX="448.0" layoutY="14.0" prefHeight="27.0" prefWidth="63.0" text="Time:">
+		<Button fx:id="saveBtn" layoutX="276.0" layoutY="125.0" mnemonicParsing="false" onAction="#saveAppointment" prefHeight="27.0" prefWidth="99.0" text="SAVE" />
+		<Label layoutX="276.0" layoutY="51.0" prefHeight="27.0" prefWidth="63.0" text="Time:">
 			<font>
 				<Font size="18.0" />
 			</font>
 		</Label>
-		<TextField fx:id="timeText" layoutX="511.0" layoutY="8.0" prefHeight="39.0" prefWidth="75.0" text="00:00">
-			<font>
-				<Font size="16.0" />
-			</font>
-		</TextField>
-		<Label layoutX="14.0" layoutY="134.0" prefHeight="27.0" prefWidth="144.0" text="Appointment list:">
+		<Label layoutX="14.0" layoutY="152.0" prefHeight="27.0" prefWidth="144.0" text="Appointment list:">
 			<font>
 				<Font size="18.0" />
 			</font>
 		</Label>
-		<TableView fx:id="tableApp" layoutX="14.0" layoutY="161.0" prefHeight="214.0" prefWidth="571.0">
+		<TableView fx:id="tableApp" layoutX="14.0" layoutY="179.0" prefHeight="214.0" prefWidth="562.0">
 			<columns>
 				<TableColumn fx:id="dateCol" prefWidth="114.0" text="Date" />
 				<TableColumn fx:id="timeCol" prefWidth="66.0" text="Time" />
@@ -62,46 +57,31 @@
 				<TableColumn fx:id="detailCol" prefWidth="236.0" text="Detail" />
 			</columns>
 		</TableView>
-      <Button fx:id="deleteBtn" layoutX="15.0" layoutY="382.0" mnemonicParsing="false" onAction="#deleteAppointment" prefHeight="27.0" prefWidth="86.0" text="DELETE" textAlignment="CENTER" textFill="RED" />
-      <Label layoutX="15.0" layoutY="409.0" text="Select event and press Delete">
+      <Button fx:id="deleteBtn" layoutX="15.0" layoutY="400.0" mnemonicParsing="false" onAction="#deleteAppointment" prefHeight="27.0" prefWidth="86.0" text="DELETE" textAlignment="CENTER" textFill="RED" />
+      <Label layoutX="15.0" layoutY="427.0" text="Select event and press Delete">
          <font>
             <Font size="11.0" />
          </font>
       </Label>
-      <Button fx:id="editBtn" layoutX="499.0" layoutY="382.0" mnemonicParsing="false" onAction="#editAppointment" prefHeight="27.0" prefWidth="86.0" text="EDIT" />
-      <Button fx:id="confirmBtn" disable="true" layoutX="490.0" layoutY="107.0" mnemonicParsing="false" onAction="#confirmEdit" prefHeight="27.0" text="CONFIRM EDIT" />
-      <Label layoutX="455.0" layoutY="409.0" text="Select event and press Edit">
+      <Button fx:id="editBtn" layoutX="491.0" layoutY="400.0" mnemonicParsing="false" onAction="#editAppointment" prefHeight="27.0" prefWidth="86.0" text="EDIT" />
+      <Button fx:id="confirmBtn" disable="true" layoutX="478.0" layoutY="125.0" mnemonicParsing="false" onAction="#confirmEdit" prefHeight="27.0" prefWidth="99.0" text="CONFIRM EDIT" AnchorPane.bottomAnchor="293.0" AnchorPane.leftAnchor="478.0" />
+      <Label layoutX="446.0" layoutY="427.0" text="Select event and press Edit">
          <font>
             <Font size="11.0" />
          </font>
       </Label>
-      <Label layoutX="276.0" layoutY="50.0" prefHeight="27.0" prefWidth="63.0" text="Type:">
+      <Label layoutX="276.0" layoutY="85.0" prefHeight="27.0" prefWidth="118.0" text="Repeat Type:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <RadioButton fx:id="weeklyBtn" layoutX="340.0" layoutY="81.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="82.0" text="Weekly">
+      <ComboBox fx:id="typeBox" layoutX="395.0" layoutY="84.0" prefHeight="30.0" prefWidth="182.0" visibleRowCount="5" />
+      <ComboBox fx:id="hourBox" layoutX="335.0" layoutY="51.0" prefHeight="30.0" prefWidth="70.0" promptText="hr" visibleRowCount="5" />
+      <ComboBox fx:id="minBox" layoutX="416.0" layoutY="51.0" prefHeight="30.0" prefWidth="70.0" promptText="min" visibleRowCount="5" />
+      <Label alignment="CENTER" layoutX="405.0" layoutY="53.0" prefHeight="27.0" prefWidth="11.0" text=":" textAlignment="CENTER">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
-         <toggleGroup>
-            <ToggleGroup fx:id="type" />
-         </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="monthlyBtn" layoutX="447.0" layoutY="57.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="87.0" text="Monthly" toggleGroup="$type">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="yearlyBtn" layoutX="447.0" layoutY="81.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="66.0" text="Yearly" toggleGroup="$type">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="dailyBtn" layoutX="340.0" layoutY="57.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="87.0" selected="true" text="Daily" toggleGroup="$type">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </RadioButton>
+      </Label>
 	</children>
 </AnchorPane>
