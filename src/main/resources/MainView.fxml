@@ -16,29 +16,29 @@
 				<Font size="18.0" />
 			</font>
 		</Label>
-		<Label layoutX="276.0" layoutY="13.0" prefHeight="27.0" prefWidth="63.0" text="Date:">
+		<Label layoutX="361.0" layoutY="14.0" prefHeight="27.0" prefWidth="63.0" text="Date:">
 			<font>
 				<Font size="18.0" />
 			</font>
 		</Label>
-		<TextField fx:id="topicText" layoutX="77.0" layoutY="8.0" prefHeight="39.0" prefWidth="189.0">
+		<TextField fx:id="topicText" layoutX="77.0" layoutY="8.0" prefHeight="39.0" prefWidth="254.0">
 			<font>
 				<Font size="16.0" />
 			</font>
 		</TextField>
-		<DatePicker fx:id="datePicker" layoutX="335.0" layoutY="8.0" prefHeight="39.0" prefWidth="151.0" />
+		<DatePicker fx:id="datePicker" layoutX="424.0" layoutY="8.0" prefHeight="39.0" prefWidth="151.0" />
 		<Label layoutX="14.0" layoutY="51.0" prefHeight="27.0" prefWidth="63.0" text="Detail:">
 			<font>
 				<Font size="18.0" />
 			</font>
 		</Label>
-		<TextArea fx:id="detailText" layoutX="77.0" layoutY="48.0" prefHeight="101.0" prefWidth="189.0">
+		<TextArea fx:id="detailText" layoutX="77.0" layoutY="50.0" prefHeight="99.0" prefWidth="254.0">
 			<font>
 				<Font size="16.0" />
 			</font>
 		</TextArea>
-		<Button fx:id="saveBtn" layoutX="276.0" layoutY="125.0" mnemonicParsing="false" onAction="#saveAppointment" prefHeight="27.0" prefWidth="99.0" text="SAVE" />
-		<Label layoutX="276.0" layoutY="51.0" prefHeight="27.0" prefWidth="63.0" text="Time:">
+		<Button fx:id="saveBtn" layoutX="361.0" layoutY="125.0" mnemonicParsing="false" onAction="#saveAppointment" prefHeight="27.0" prefWidth="99.0" text="SAVE" />
+		<Label layoutX="361.0" layoutY="51.0" prefHeight="27.0" prefWidth="63.0" text="Time:">
 			<font>
 				<Font size="18.0" />
 			</font>
@@ -64,21 +64,21 @@
          </font>
       </Label>
       <Button fx:id="editBtn" layoutX="491.0" layoutY="400.0" mnemonicParsing="false" onAction="#editAppointment" prefHeight="27.0" prefWidth="86.0" text="EDIT" />
-      <Button fx:id="confirmBtn" disable="true" layoutX="478.0" layoutY="125.0" mnemonicParsing="false" onAction="#confirmEdit" prefHeight="27.0" prefWidth="99.0" text="CONFIRM EDIT" AnchorPane.bottomAnchor="293.0" AnchorPane.leftAnchor="478.0" />
+      <Button fx:id="confirmBtn" disable="true" layoutX="478.0" layoutY="125.0" mnemonicParsing="false" onAction="#confirmEdit" prefHeight="27.0" prefWidth="99.0" text="CONFIRM EDIT" />
       <Label layoutX="446.0" layoutY="427.0" text="Select event and press Edit">
          <font>
             <Font size="11.0" />
          </font>
       </Label>
-      <Label layoutX="276.0" layoutY="85.0" prefHeight="27.0" prefWidth="118.0" text="Repeat Type:">
+      <Label layoutX="361.0" layoutY="87.0" prefHeight="27.0" prefWidth="118.0" text="Repeat Type:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ComboBox fx:id="typeBox" layoutX="395.0" layoutY="84.0" prefHeight="30.0" prefWidth="182.0" visibleRowCount="5" />
-      <ComboBox fx:id="hourBox" layoutX="335.0" layoutY="51.0" prefHeight="30.0" prefWidth="70.0" promptText="hr" visibleRowCount="5" />
-      <ComboBox fx:id="minBox" layoutX="416.0" layoutY="51.0" prefHeight="30.0" prefWidth="70.0" promptText="min" visibleRowCount="5" />
-      <Label alignment="CENTER" layoutX="405.0" layoutY="53.0" prefHeight="27.0" prefWidth="11.0" text=":" textAlignment="CENTER">
+      <ComboBox fx:id="typeBox" layoutX="472.0" layoutY="85.0" prefHeight="30.0" prefWidth="105.0" visibleRowCount="5" />
+      <ComboBox fx:id="hourBox" layoutX="424.0" layoutY="51.0" prefHeight="30.0" prefWidth="70.0" promptText="hr" visibleRowCount="5" />
+      <ComboBox fx:id="minBox" layoutX="505.0" layoutY="51.0" prefHeight="30.0" prefWidth="70.0" promptText="min" visibleRowCount="5" />
+      <Label alignment="CENTER" layoutX="494.0" layoutY="53.0" prefHeight="27.0" prefWidth="11.0" text=":" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>

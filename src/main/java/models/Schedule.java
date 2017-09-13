@@ -1,10 +1,10 @@
+/**  5810404928 Chotika Luangorachorn  */
 package models;
 
 import java.util.ArrayList;
 
 public class Schedule {
 	private ArrayList<Event> events;
-	private Event event;
 	public Schedule(){
 		this.events = new ArrayList<Event>();
 	}

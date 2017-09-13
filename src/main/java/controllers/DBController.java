@@ -1,3 +1,4 @@
+/**  5810404928 Chotika Luangorachorn  */
 package controllers;
 
 import models.Event;
@@ -120,6 +121,7 @@ public class DBController {
                     System.out.println("edit-------");
                     event.setDateOld(event.getDate());
                     event.setTimeOld(event.getTime());
+                    event.setTypeOld(event.getType());
                     event.setTopicOld(event.getTopic());
                     event.setDetailOld(event.getDetail());
                 }catch (SQLException ex){

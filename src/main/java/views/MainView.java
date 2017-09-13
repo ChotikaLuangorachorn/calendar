@@ -1,3 +1,4 @@
+/**  5810404928 Chotika Luangorachorn  */
 package views;
 
 
@@ -6,25 +7,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.fxml.Initializable;;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 import models.Event;
 
-import java.io.IOException;
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ValueRange;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class MainView implements Initializable {
@@ -162,22 +153,6 @@ public class MainView implements Initializable {
 
 	/**set column of Schedule appointment that save all events*/
 	private void initCol(){
-//		dateCol.setCellValueFactory(new Callback<CellDataFeatures<Event,String>, ObservableValue<String>>() {
-//			public ObservableValue<String> call(CellDataFeatures<Event, String> param) {
-//				SimpleStringProperty property = new SimpleStringProperty();
-//				DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
-//				property.setValue(formatter.format(param.getValue().getDate()));
-//				return property;
-//			}
-//		});
-//		timeCol.setCellValueFactory(new Callback<CellDataFeatures<Event,String>, ObservableValue<String>>() {
-//			public ObservableValue<String> call(CellDataFeatures<Event, String> param) {
-//				SimpleStringProperty property = new SimpleStringProperty();
-//				DateFormat formatter = new SimpleDateFormat("HH:mm");
-//				property.setValue(formatter.format(param.getValue().getTime()));
-//				return property;
-//			}
-//		});
 		dateCol.setCellValueFactory(new PropertyValueFactory<Event, String>("date"));
 		timeCol.setCellValueFactory(new PropertyValueFactory<Event,String>("time"));
 		typeCol.setCellValueFactory(new PropertyValueFactory<Event, String>("type"));
