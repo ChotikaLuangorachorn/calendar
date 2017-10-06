@@ -18,23 +18,25 @@ public class MainController{
 		this.db.selectToDB();
 	}
 	
-/**show Schedule or all events
+	/**show Schedule or all events
 	It will called when click Save button*/
 	public ArrayList<Event> showSchedule(){
 		ArrayList<Event> events = schedule.getEvents();
 		return events;
 	}
-	
+
 	/**add event to schedule in Schedule class
 	when click Save button*/
 	public void saveEvent(Event event){
 		db.insertToDB(event);
 	}
+
 	/**remove event from schedule in Schedule class
 	 when click Delete button*/
 	public void removeEvent(Event event){
 		db.deleteToDB(event);
 	}
+
 	/**edit event in schedule
 	 when click Edit button*/
 	public void editEvent(Event event){ db.updateToDB(event);}

@@ -8,15 +8,22 @@ import java.sql.*;
 
 public class DBController {
     private Schedule schedule;
+    private String url = "schedule.db";
     public DBController(Schedule schedule){
         this.schedule = schedule;
+    }
+
+    /**connect database*/
+    public Connection connectionDB() throws ClassNotFoundException, SQLException {
+        Class.forName("org.sqlite.JDBC");
+        String dbURL = "jdbc:sqlite:" + url;
+        Connection conn = DriverManager.getConnection(dbURL);
+        return conn;
     }
     /**add event to Database*/
     public void insertToDB(Event event) {
         try{
-            Class.forName("org.sqlite.JDBC");
-            String dbURL = "jdbc:sqlite:schedule.db";
-            Connection conn = DriverManager.getConnection(dbURL);
+            Connection conn = connectionDB();
             if (conn != null) {
                 System.out.println("Connected to the database...");
                 Statement statement = conn.createStatement();
@@ -41,9 +48,7 @@ public class DBController {
     /**show event in Database*/
     public void selectToDB() {
         try{
-            Class.forName("org.sqlite.JDBC");
-            String dbURL = "jdbc:sqlite:schedule.db";
-            Connection conn = DriverManager.getConnection(dbURL);
+            Connection conn = connectionDB();
             if (conn != null) {
                 System.out.println("Connected to the database...");
                 DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
@@ -73,9 +78,7 @@ public class DBController {
     /**remove event in Database*/
     public void deleteToDB(Event event){
         try{
-            Class.forName("org.sqlite.JDBC");
-            String dbURL = "jdbc:sqlite:schedule.db";
-            Connection conn = DriverManager.getConnection(dbURL);
+            Connection conn = connectionDB();
             if (conn != null) {
                 System.out.println("Connected to the database...");
                 DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
@@ -101,9 +104,7 @@ public class DBController {
     /**edit event in Database*/
     public void updateToDB(Event event) {
         try{
-            Class.forName("org.sqlite.JDBC");
-            String dbURL = "jdbc:sqlite:schedule.db";
-            Connection conn = DriverManager.getConnection(dbURL);
+            Connection conn = connectionDB();
             if (conn != null) {
                 System.out.println("Connected to the database...");
                 Statement statement = conn.createStatement();
@@ -134,4 +135,13 @@ public class DBController {
             ex.printStackTrace();
         }
     }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
 }
