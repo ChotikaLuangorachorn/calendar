@@ -45,6 +45,8 @@ public class MainView implements Initializable {
 	private ObservableList<Event> data;
 	private MainController controller;
 	private Event eventSelect;
+	private ArrayList<Event> events;
+
 	public void setController(MainController controller){
 		this.controller = controller;
 	}
@@ -107,6 +109,7 @@ public class MainView implements Initializable {
 		eventSelect = tableApp.getSelectionModel().getSelectedItem();
 		if (eventSelect != null) {
 			tableApp.getItems().remove(eventSelect);
+			events.remove(eventSelect);
 			controller.removeEvent(eventSelect);
 			tableApp.getSelectionModel().clearSelection();
 		}
@@ -156,6 +159,7 @@ public class MainView implements Initializable {
 	/**Search Event
 	* */
 	public void search(ActionEvent event){
+		events = controller.showSchedule();
 		if (searchPicker.getValue() != null) {
 			System.out.println("search...");
 			Date date = Date.from((searchPicker.getValue()).atStartOfDay(ZoneId.systemDefault()).toInstant());
@@ -167,10 +171,13 @@ public class MainView implements Initializable {
 	/**
 	 * click for show all Event*/
 	public void showAllAppointment(ActionEvent event){
-		ArrayList<Event> events = controller.showSchedule();
+		events = controller.showSchedule();
 		ObservableList<Event> data = FXCollections.observableList(events);
 		tableApp.setItems(data);
 		searchPicker.getEditor().setText("");
+		if (searchPicker.getValue() != null) {
+
+		}
 	}
 
 	/**set column of Schedule appointment that save all events*/
