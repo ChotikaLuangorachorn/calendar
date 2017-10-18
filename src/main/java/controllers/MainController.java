@@ -2,6 +2,8 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.Date;
+
 import models.Event;
 import models.Schedule;
 import views.MainView;
@@ -40,6 +42,10 @@ public class MainController{
 	/**edit event in schedule
 	 when click Edit button*/
 	public void editEvent(Event event){ db.updateToDB(event);}
+
+	public ArrayList<Event> searchEvent(Date date){
+		return schedule.getEventsSearch(date);
+	}
 
 }
 

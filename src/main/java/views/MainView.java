@@ -14,8 +14,11 @@ import models.Event;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class MainView implements Initializable {
@@ -25,7 +28,7 @@ public class MainView implements Initializable {
 	@FXML
 	private TableColumn<Event, String> dateCol, timeCol, typeCol, topicCol, detailCol;
 	@FXML
-	private DatePicker datePicker;
+	private DatePicker datePicker, searchPicker;
 	@FXML
 	private TextField topicText;
 	@FXML
@@ -36,12 +39,12 @@ public class MainView implements Initializable {
 	private Button saveBtn;
 	@FXML
 	private ComboBox typeBox, hourBox, minBox;
-	private ObservableList<String> repeatTypeList = FXCollections.observableArrayList("Never","Daily", "Weekly", "Monthly");
+	private ObservableList<String> repeatTypeList = FXCollections.observableArrayList("Never","Daily", "Weekly", "Monthly", "Yearly");
 	private ObservableList<String> hrList = FXCollections.observableArrayList();
 	private ObservableList<String> minList = FXCollections.observableArrayList();
 	private ObservableList<Event> data;
 	private MainController controller;
-
+	private Event eventSelect;
 	public void setController(MainController controller){
 		this.controller = controller;
 	}
@@ -78,7 +81,7 @@ public class MainView implements Initializable {
 	/** action of Save Button
 	 * click for save event to Schedule */
 	public void saveAppointment(ActionEvent event){
-		String date = datePicker.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy"));
+		String date = datePicker.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy", Locale.ENGLISH));
 		String day = datePicker.getValue().getDayOfWeek().toString();
 		System.out.println(day);
 		String type = typeBox.getValue().toString();
@@ -101,7 +104,7 @@ public class MainView implements Initializable {
 	/** action of Delete Button
 	 * click for remove event */
 	public void deleteAppointment(ActionEvent event){
-		Event eventSelect = tableApp.getSelectionModel().getSelectedItem();
+		eventSelect = tableApp.getSelectionModel().getSelectedItem();
 		if (eventSelect != null) {
 			tableApp.getItems().remove(eventSelect);
 			controller.removeEvent(eventSelect);
@@ -112,7 +115,7 @@ public class MainView implements Initializable {
 	/** action of Edit Button
 	 * click for edit event */
 	public void editAppointment(ActionEvent event){
-		Event eventSelect = tableApp.getSelectionModel().getSelectedItem();
+		eventSelect = tableApp.getSelectionModel().getSelectedItem();
 		if (eventSelect != null) {
 			saveBtn.setDisable(true);
 			topicText.setText(eventSelect.getTopic());
@@ -129,8 +132,7 @@ public class MainView implements Initializable {
 
 	/** action of Confirm Button
 	 * click for confirm editing event */
-	public  void confirmEdit(ActionEvent event){
-		Event eventSelect = tableApp.getSelectionModel().getSelectedItem();
+	public void confirmEdit(ActionEvent event){
 		String date = datePicker.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy"));
 		eventSelect.setDate(date);
 		eventSelect.setTime(hourBox.getValue() + ":" + minBox.getValue());
@@ -151,6 +153,26 @@ public class MainView implements Initializable {
 		tableApp.refresh();
 	}
 
+	/**Search Event
+	* */
+	public void search(ActionEvent event){
+		if (searchPicker.getValue() != null) {
+			System.out.println("search...");
+			Date date = Date.from((searchPicker.getValue()).atStartOfDay(ZoneId.systemDefault()).toInstant());
+			ArrayList<Event> events = controller.searchEvent(date);
+			ObservableList<Event> data = FXCollections.observableList(events);
+			tableApp.setItems(data);}
+
+	}
+	/**
+	 * click for show all Event*/
+	public void showAllAppointment(ActionEvent event){
+		ArrayList<Event> events = controller.showSchedule();
+		ObservableList<Event> data = FXCollections.observableList(events);
+		tableApp.setItems(data);
+		searchPicker.getEditor().setText("");
+	}
+
 	/**set column of Schedule appointment that save all events*/
 	private void initCol(){
 		dateCol.setCellValueFactory(new PropertyValueFactory<Event, String>("date"));
@@ -159,6 +181,7 @@ public class MainView implements Initializable {
 		topicCol.setCellValueFactory(new PropertyValueFactory<Event, String>("topic"));
 		detailCol.setCellValueFactory(new PropertyValueFactory<Event, String>("detail"));
 	}
+
 	/**
 	 * set items of table
 	 * @param events
@@ -167,6 +190,8 @@ public class MainView implements Initializable {
 		data = FXCollections.observableList(events);
 		tableApp.setItems(data);
 	}
+
+
 	public TableView<Event> getTableApp() {
 		return tableApp;
 	}
