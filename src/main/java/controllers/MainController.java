@@ -6,6 +6,8 @@ import java.util.Date;
 
 import models.Event;
 import models.Schedule;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import views.MainView;
 
 public class MainController{
@@ -15,8 +17,11 @@ public class MainController{
 
 	public void startCalendarApp()  {
 		this.view = new MainView();
-		this.schedule = new Schedule();
-		this.db = new DBController(schedule);
+//		this.schedule = new Schedule();
+//		this.db = new DbSchedule.xml(schedule);
+		ApplicationContext bean = new ClassPathXmlApplicationContext("DbSchedule.xml");
+		db = (DBController) bean.getBean("db");
+		schedule = (Schedule) bean.getBean("schedule");
 		this.db.selectToDB();
 	}
 	

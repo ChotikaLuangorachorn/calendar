@@ -8,7 +8,7 @@ import java.sql.*;
 
 public class DBController {
     private Schedule schedule;
-    private String url = "schedule.db";
+    private String url;
     public DBController(Schedule schedule){
         this.schedule = schedule;
     }
