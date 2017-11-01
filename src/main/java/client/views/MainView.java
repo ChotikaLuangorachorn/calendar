@@ -99,7 +99,7 @@ public class MainView implements Initializable {
 		hourBox.setValue("hr");
 		minBox.setValue("min");
 
-		ArrayList<Event> events = controller.showSchedule();
+		ArrayList<Event> events = controller.getSchedule();
 		initData(events);
 	}
 
@@ -111,7 +111,7 @@ public class MainView implements Initializable {
 //			tableApp.getItems().remove(eventSelect);
 //			events.remove(eventSelect);
 			controller.removeEvent(eventSelect);
-			setEvents(controller.showSchedule());
+			setEvents(controller.getSchedule());
 //			tableApp.getSelectionModel().clearSelection();
 		}
 	}
@@ -138,18 +138,23 @@ public class MainView implements Initializable {
 	 * click for confirm editing event */
 	public void confirmEdit(ActionEvent event){
 		String date = datePicker.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy"));
+		String topic = topicText.getText();
+		String time = hourBox.getValue() + ":" + minBox.getValue();
+		String type = typeBox.getValue().toString();
+		String detail = detailText.getText();
 //		eventSelect.setDate(date);
 //		eventSelect.setTime(hourBox.getValue() + ":" + minBox.getValue());
 //		eventSelect.setTopic(topicText.getText());
 //		eventSelect.setDetail(detailText.getText());
 //		eventSelect.setType(typeBox.getValue().toString());
-//
 //		controller.editEvent(eventSelect);
-		String topic = topicText.getText();
-		String time = hourBox.getValue() + ":" + minBox.getValue();
-		String type = typeBox.getValue().toString();
-		String detail = detailText.getText();
-		controller.editEvent(new Event(date,time,type,topic,detail));
+		eventSelect.setDate(date);
+		eventSelect.setTime(time);
+		eventSelect.setTopic(topic);
+		eventSelect.setDetail(detail);
+		eventSelect.setType(type);
+
+		controller.editEvent(eventSelect);
 		datePicker.setValue(LocalDate.now());
 		hourBox.setValue("hr");
 		minBox.setValue("min");
@@ -165,7 +170,7 @@ public class MainView implements Initializable {
 	/**Search Event
 	* */
 	public void search(ActionEvent event){
-		events = controller.showSchedule();
+		events = controller.getSchedule();
 		if (searchPicker.getValue() != null) {
 			System.out.println("search...");
 			Date date = Date.from((searchPicker.getValue()).atStartOfDay(ZoneId.systemDefault()).toInstant());
@@ -177,7 +182,7 @@ public class MainView implements Initializable {
 	/**
 	 * click for show all Event*/
 	public void showAllAppointment(ActionEvent event){
-		events = controller.showSchedule();
+		events = controller.getSchedule();
 		ObservableList<Event> data = FXCollections.observableList(events);
 		tableApp.setItems(data);
 		searchPicker.getEditor().setText("");

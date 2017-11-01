@@ -30,7 +30,7 @@ public class MainController{
 	
 	/**show Schedule or all events
 	It will called when click Save button*/
-	public ArrayList<Event> showSchedule(){
+	public ArrayList<Event> getSchedule(){
 		ArrayList<Event> events = schedule.getEvents();
 		return events;
 	}

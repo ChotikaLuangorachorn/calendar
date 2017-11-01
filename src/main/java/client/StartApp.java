@@ -2,13 +2,10 @@ package client; /**  5810404928 Chotika Luangorachorn  */
 
 import client.controllers.MainController;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import common.models.Event;
 import client.views.MainView;
 
 import java.io.IOException;
@@ -32,10 +29,10 @@ public class StartApp extends Application {
 		MainView mainView = loader.getController();
 		mainView.setController(controller);
 
-//		ObservableList<Event> data = FXCollections.observableList(controller.showSchedule());
+//		ObservableList<Event> data = FXCollections.observableList(controller.getSchedule());
 //
 //		mainView.getTableApp().setItems(data);
-		mainView.setEvents(controller.showSchedule());
+		mainView.setEvents(controller.getSchedule());
 
 		primaryStage.setTitle("Appointment");
 		primaryStage.setScene(new Scene(root));
