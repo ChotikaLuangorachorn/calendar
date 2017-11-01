@@ -7,9 +7,9 @@
 //
 //import org.junit.Test;
 //
-//import controllers.MainController;
-//import models.Event;
-//import models.Schedule;
+//import client.server.controllers.MainController;
+//import common.models.Event;
+//import common.models.Schedule;
 //
 //public class MyAppTest {
 //
