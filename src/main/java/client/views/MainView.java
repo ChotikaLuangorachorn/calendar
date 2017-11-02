@@ -92,15 +92,20 @@ public class MainView implements Initializable {
 		controller.saveEvent(eventNow);
 
 		datePicker.setValue(LocalDate.now());
-
 		topicText.setText("");
 		detailText.setText("");
 		typeBox.setValue("Never");
 		hourBox.setValue("hr");
 		minBox.setValue("min");
 
-		ArrayList<Event> events = controller.getSchedule();
-		initData(events);
+		if (!searchPicker.getEditor().getText().equals("")){
+			this.search(new ActionEvent());}
+		else {
+			events = controller.getSchedule();
+			initData(events);
+		}
+//		events = controller.getSchedule();
+//		initData(events);
 	}
 
 	/** action of Delete Button
@@ -108,11 +113,11 @@ public class MainView implements Initializable {
 	public void deleteAppointment(ActionEvent event){
 		eventSelect = tableApp.getSelectionModel().getSelectedItem();
 		if (eventSelect != null) {
-//			tableApp.getItems().remove(eventSelect);
-//			events.remove(eventSelect);
+			tableApp.getItems().remove(eventSelect);
 			controller.removeEvent(eventSelect);
-			setEvents(controller.getSchedule());
-//			tableApp.getSelectionModel().clearSelection();
+			events = controller.getSchedule();
+//			setEvents(controller.getSchedule());
+			tableApp.getSelectionModel().clearSelection();
 		}
 	}
 
@@ -120,24 +125,34 @@ public class MainView implements Initializable {
 	 * click for edit event */
 	public void editAppointment(ActionEvent event){
 		eventSelect = tableApp.getSelectionModel().getSelectedItem();
+
 		if (eventSelect != null) {
+
 			saveBtn.setDisable(true);
 			topicText.setText(eventSelect.getTopic());
 			detailText.setText(eventSelect.getDetail());
 			hourBox.setValue((eventSelect.getTime().split(":"))[0]);
 			minBox.setValue((eventSelect.getTime().split(":"))[1]);
-			datePicker.getEditor().setText(eventSelect.getDate());
+//			datePicker.getEditor().setText(eventSelect.getDate());
+			datePicker.setValue(local_date(eventSelect.getDate()));
+
 			String type = eventSelect.getType();
 			typeBox.setValue(type);
 			confirmBtn.setDisable(false);
 		}
 
 	}
+	public LocalDate local_date (String dateString){
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
+		LocalDate localDate = LocalDate.parse(dateString, formatter);
+		return localDate;
+	}
 
 	/** action of Confirm Button
 	 * click for confirm editing event */
 	public void confirmEdit(ActionEvent event){
-		String date = datePicker.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy"));
+		String date = datePicker.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yy", Locale.ENGLISH));
+		System.out.println(date);
 		String topic = topicText.getText();
 		String time = hourBox.getValue() + ":" + minBox.getValue();
 		String type = typeBox.getValue().toString();
@@ -153,8 +168,13 @@ public class MainView implements Initializable {
 		eventSelect.setTopic(topic);
 		eventSelect.setDetail(detail);
 		eventSelect.setType(type);
-
 		controller.editEvent(eventSelect);
+		if (!searchPicker.getEditor().getText().equals("")){
+			this.search(new ActionEvent());}
+		else {
+			events = controller.getSchedule();
+			initData(events);}
+
 		datePicker.setValue(LocalDate.now());
 		hourBox.setValue("hr");
 		minBox.setValue("min");
@@ -164,7 +184,7 @@ public class MainView implements Initializable {
 		confirmBtn.setDisable(true);
 		saveBtn.setDisable(false);
 		tableApp.getSelectionModel().clearSelection();
-		tableApp.refresh();
+
 	}
 
 	/**Search Event
@@ -174,18 +194,17 @@ public class MainView implements Initializable {
 		if (searchPicker.getValue() != null) {
 			System.out.println("search...");
 			Date date = Date.from((searchPicker.getValue()).atStartOfDay(ZoneId.systemDefault()).toInstant());
-			ArrayList<Event> events = controller.searchEvent(date);
-			ObservableList<Event> data = FXCollections.observableList(events);
-			tableApp.setItems(data);}
+			events = controller.searchEvent(date);
+			initData(events);
+		}
 
 	}
 	/**
 	 * click for show all Event*/
 	public void showAllAppointment(ActionEvent event){
 		events = controller.getSchedule();
-		ObservableList<Event> data = FXCollections.observableList(events);
-		tableApp.setItems(data);
-		searchPicker.getEditor().setText("");
+		initData(events);
+		searchPicker.setValue(null);
 	}
 
 	/**set column of Schedule appointment that save all events*/
@@ -201,15 +220,15 @@ public class MainView implements Initializable {
 	 * set items of table
 	 * @param events
 	 */	
+
 	private void initData(ArrayList<Event> events){
 		data = FXCollections.observableList(events);
 		tableApp.setItems(data);
 	}
-
-
-	public TableView<Event> getTableApp() {
-		return tableApp;
-	}
+//
+//	public TableView<Event> getTableApp() {
+//		return tableApp;
+//	}
 
 	public void setEvents(ArrayList<Event> events) {
 		this.events = events;

@@ -47,6 +47,7 @@ public class Schedule implements ScheduleServer, Serializable{
 				}else if (event.getType().equals("Yearly") && date.getDate() == dateSearch.getDate() && date.getMonth() == dateSearch.getMonth()){
 					events.add(event);
 				}
+
 			}
 		} catch (ParseException e) {
 			System.out.println("XX Searching ERROR XX");
@@ -73,8 +74,8 @@ public class Schedule implements ScheduleServer, Serializable{
 	public void editEvent(Event event){
 		int i = 0;
 		while (i < events.size()){
-			if (events.get(i).getTopic().equals(event.getTopic())
-					&& events.get(i).getTime().equals(event.getTime())) {
+			if (events.get(i).getTopic().equals(event.getTopicOld())
+					&& events.get(i).getTime().equals(event.getTimeOld())) {
 				events.get(i).setTopic(event.getTopic());
 				events.get(i).setDate(event.getDate());
 				events.get(i).setTime(event.getTime());
