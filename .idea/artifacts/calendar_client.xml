@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="calendar-client">
+    <output-path>$PROJECT_DIR$/out/artifacts/calendar_client</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="client.StartApp" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="calendar.jar">
+        <element id="module-output" name="calendar" />
+      </element>
+      <element id="library" level="project" name="Maven: junit:junit:4.8.1" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.xerial:sqlite-jdbc:3.20.0" />
+    </root>
+  </artifact>
+</component>
