@@ -1,5 +1,5 @@
-package client; /**  5810404928 Chotika Luangorachorn  */
-
+package client;
+/**  5810404928 Chotika Luangorachorn  */
 import client.controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

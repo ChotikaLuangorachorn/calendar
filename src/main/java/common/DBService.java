@@ -1,14 +1,11 @@
 package common;
-
+/**  5810404928 Chotika Luangorachorn  */
 import common.models.Event;
 import common.models.Schedule;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-/**
- * Created by PC301 on 1/11/2560.
- */
 public interface DBService {
     Connection connectionDB() throws ClassNotFoundException, SQLException;
     void insertToDB(Event event);
